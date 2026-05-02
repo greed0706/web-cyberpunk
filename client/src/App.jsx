@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { io } from 'socket.io-client';
 
-const socket = io('http://localhost:3003');
+const SERVER_URL = import.meta.env.VITE_SERVER_URL || 'http://localhost:3003';
+const socket = io(SERVER_URL);
 
 const getColor = (name) => {
     const colors = ['#00fff7', '#ff00ff', '#7fff00', '#ff6b00', '#00bfff', '#ff1493'];
